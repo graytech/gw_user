@@ -1,0 +1,7 @@
+
+- Login Attempts
+	- configurable in config file 
+		limit number: if 0 does not limit
+		time_to_lock: time in seconds to lock account if flooded
+		type: session based, ip based
+		
