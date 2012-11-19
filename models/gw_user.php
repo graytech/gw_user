@@ -1,8 +1,9 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * User Access System
+ * @copyright 2012, Grayworld Media, LLC. All rights reserved.
  */
-
+ 
 /**
  * User Object Access Model Class
  * 
@@ -617,6 +618,8 @@ class Gw_user extends CI_Model {
 	 * 
 	 * Method used to setup tables and other elements in the environment
 	 * so this class will function.
+     * 
+     * @todo convert table creation to CI SQL-less code
 	 */
 	protected function setup() {
 		if (!$this->db->table_exists($this->user_table)) {
