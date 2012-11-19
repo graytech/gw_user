@@ -18,7 +18,6 @@
  * Displays the data structure for any supplied value
  * 
  * @param 	mixed $var
- * @access	public
  * @return	string
  */
 if ( ! function_exists('print_pre')) {
@@ -36,7 +35,12 @@ if ( ! function_exists('print_pre')) {
  * Data cleaner
  * 
  * Cleans data by stripping out unneeded keys 
- * and tells if all required fields where supplied
+ * and tells if all required fields where supplied.
+ * 
+ * @param array $datain - pointer to data to clean
+ * @param array $allowed_fields - field keys that are allowed
+ * @param array $required_fields - fields that are required
+ * @return mixed - logical true if success. string of missing fields require check fails
  */
 if ( ! function_exists('clean_data')) {
 	function clean_data(&$datain, $allowed_fields=null, $required_fields=null) {
@@ -69,7 +73,9 @@ if ( ! function_exists('clean_data')) {
  * Check for Serialization
  * 
  * Check to see if a string is serialized
- * Returns true if a string is serialized
+ * 
+ * @param string $var
+ * @return boolean - true if a string is serialized; else returns false
  */
 if ( ! function_exists('is_serialized')) {
 	function is_serialized($var=null) {
@@ -87,6 +93,9 @@ if ( ! function_exists('is_serialized')) {
  * Provide email address (raw input)
  * Returns true if the email address has the email 
  * address format and the domain exists.
+ * 
+ * @param string $email
+ * @return boolean - true if valid email; else false.
  */
 if ( function_exists('is_vslid_email')) {
 	function validEmail($email) {
@@ -140,6 +149,8 @@ if ( function_exists('is_vslid_email')) {
  * 
  * This function attempts to determing the clients real ip address
  * it will resolve ips behind proxies and shared connections.
+ * 
+ * @return string - users real ip address
  */
 if ( function_exists('get_ip_address')) {
 	function get_ip_address() {
